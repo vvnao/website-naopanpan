@@ -6,7 +6,6 @@
 
 body {
     min-height: 100vh;
-    background: url("assets/nyan.gif") repeat;
     font-family: "Comic Sans MS", Verdana, sans-serif;
     display: flex;
     justify-content: center;
@@ -14,13 +13,18 @@ body {
     position: relative;
 }
 
-body::before {
-    content: "";
+.bg-gif {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.45);
-    /* ajusta aquí */
-    z-index: -1;
+    background: url("assets/nyan.gif") repeat;
+    z-index: -2;
+}
+
+.bg-gif::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .profile-pic {
@@ -62,11 +66,6 @@ body::before {
     margin-bottom: 15px;
 }
 
-.nyan {
-    width: 150px;
-    margin: 15px 0;
-}
-
 .rainbow-bar {
     height: 8px;
     margin: 20px 0;
@@ -90,8 +89,8 @@ body::before {
 }
 
 .box h2 {
-    margin-bottom: 8px;
     color: #ffd6ff;
+    text-shadow: 0 0 6px rgba(255, 214, 255, 0.4);
 }
 
 .about {
@@ -136,5 +135,21 @@ a:hover {
 
     100% {
         background-position: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .profile-pic {
+        width: 100px;
+        height: 100px;
+    }
+
+    .rainbow-text {
+        font-size: 26px;
     }
 }
