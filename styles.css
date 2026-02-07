@@ -6,7 +6,7 @@
 
 body {
     min-height: 100vh;
-    font-family: "Comic Sans MS", Verdana, sans-serif;
+    font-family: "Comic Neue", "Comic Sans MS", Verdana, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,7 +41,7 @@ body {
     background: rgba(0, 0, 0, 0.75);
     border: 3px solid rgb(0, 221, 255);
     padding: 25px;
-    width: 600px;
+    width: min(600px, 92vw);
     text-align: center;
     color: white;
     box-shadow: 0 0 20px black;
@@ -138,18 +138,17 @@ a:hover {
     }
 }
 
-@media (max-width: 768px) {
-    .card {
-        width: 90%;
-        padding: 20px;
+@media (max-width: 480px) {
+    .rainbow-text {
+        font-size: 22px;
+    }
+
+    .about-item p {
+        font-size: 13px;
     }
 
     .profile-pic {
-        width: 100px;
-        height: 100px;
-    }
-
-    .rainbow-text {
-        font-size: 26px;
+        width: 90px;
+        height: 90px;
     }
 }
